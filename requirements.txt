@@ -1,0 +1,13 @@
+dash==2.13.0
+dash-bootstrap-components
+plotly
+pandas
+plotly-express
+dash-bootstrap-templates
+dash-core-components
+dash-daq
+dash-html-components
+dash-table
+gunicorn
+pathlib
+python-dotenv==0.10.1
