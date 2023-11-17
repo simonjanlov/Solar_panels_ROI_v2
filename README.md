@@ -1,4 +1,4 @@
-# Solar Panels: Return On Ivested Capital
+# Solar Panels: Return On Invested Capital
 
 Graduation project at the Data Engineer program at Brights / Academic Work Academy.
 
