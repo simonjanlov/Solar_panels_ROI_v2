@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the data
-data = pd.read_csv("final_project\data\elpriser_sverige96-23.csv")  
+data = pd.read_csv("final_project/data/elpriser_sverige96-23.csv")  
 
 # # List of columns to increase by 25% (skatt)
 # columns_to_increase = ['Lägenhet', 'Villa utan elvärme', 'Villa med elvärme', 'Större hushåll', 'Näringsverksamhet', 'Småindustri']

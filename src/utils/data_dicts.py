@@ -8,7 +8,7 @@ packages_dict = {
     '45 solar panels': {'system_cost': 195999 / 1.25, 'system_effect': 18.5}
 }
 
-elpris_df = pd.read_csv(r'data\predicted_prices_withzones.csv')
+elpris_df = pd.read_csv(r'data/predicted_prices_withzones.csv')
 
 years_list = list(elpris_df['Year'])
 years_list = list([2023] + years_list)
