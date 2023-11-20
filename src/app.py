@@ -8,6 +8,7 @@ import pandas as pd
 from dash_bootstrap_templates import load_figure_template
 
 sys.path.append(str(Path('.').absolute()) + '/src/utils')
+sys.path.append(str(Path('.').absolute()) + '/utils')
 
 # Import class and functions
 from electricity_output_calc import SolarPanelSystem
