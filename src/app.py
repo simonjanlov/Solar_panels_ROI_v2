@@ -34,9 +34,9 @@ load_figure_template("superhero")
 app = Dash(__name__, external_stylesheets=[dbc.themes.SUPERHERO])
 server = app.server
 
-# Load the price prognoses data
-
-data = pd.read_csv(r'data/Electricity generation by source - Sweden.csv')
+# Create pie chart
+electricity_gen_by_source = Path(__file__).resolve().parents[1] / 'data' / 'Electricity generation by source - Sweden.csv'
+data = pd.read_csv(electricity_gen_by_source)
 df = pd.DataFrame(data)
 df.drop(columns=['Unnamed: 0'], inplace=True)
 sums = df.sum()
