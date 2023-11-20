@@ -11,13 +11,13 @@ packages_dict = {
     '45 solar panels': {'system_cost': 195999 / 1.25, 'system_effect': 18.5}
 }
 
-elpris_df = pd.read_csv(csv_path)
+price_prognoses_df = pd.read_csv(csv_path)
 
-years_list = list(elpris_df['Year'])
+years_list = list(price_prognoses_df['Year'])
 years_list = list([2023] + years_list)
 
-zone_1_predicted_prices = list(elpris_df['zone1'])
-zone_2_predicted_prices = list(elpris_df['zone2'])
-zone_3_predicted_prices = list(elpris_df['zone3'])
-zone_4_predicted_prices = list(elpris_df['zone4'])
+zone_1_predicted_prices = list(price_prognoses_df['zone1'])
+zone_2_predicted_prices = list(price_prognoses_df['zone2'])
+zone_3_predicted_prices = list(price_prognoses_df['zone3'])
+zone_4_predicted_prices = list(price_prognoses_df['zone4'])
 

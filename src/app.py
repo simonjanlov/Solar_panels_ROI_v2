@@ -17,7 +17,7 @@ from calc_years_until_breakeven import calc_years_until_breakeven
 from PVGIS_ETL import coordinates_to_insolation_mean
 
 # Import the data for cities and solar packages
-from data_dicts import packages_dict, years_list, elpris_df
+from data_dicts import packages_dict, years_list, price_prognoses_df
 from data_dicts import zone_1_predicted_prices, zone_2_predicted_prices, zone_3_predicted_prices, zone_4_predicted_prices
 
 
@@ -35,7 +35,7 @@ app = Dash(__name__, external_stylesheets=[dbc.themes.SUPERHERO])
 server = app.server
 
 # Load the price prognoses data
-price_prognoses_data = elpris_df
+
 data = pd.read_csv(r'data/Electricity generation by source - Sweden.csv')
 df = pd.DataFrame(data)
 df.drop(columns=['Unnamed: 0'], inplace=True)
@@ -49,7 +49,7 @@ fig1.update_layout(
 )
 
 # Create the line graph for the price predictions
-prognoses_fig = px.line(price_prognoses_data, 
+prognoses_fig = px.line(price_prognoses_df, 
                         x='Year', 
                         y=['Predicted kWh price', 'zone1', 'zone2', 'zone3', 'zone4'] 
                         )
