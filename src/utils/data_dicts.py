@@ -1,5 +1,11 @@
 import pandas as pd
+from pathlib import Path
+# import platform
 
+csv_path = Path(__file__).resolve().parents[2] / 'data' / 'predicted_prices_withzones.csv'
+
+# if platform.system() == 'Linux':
+#     csv_path = Path(__file__).resolve().parents[2] / 'data' / 'predicted_prices_withzones.csv'
 
 packages_dict = {
     '12 solar panels': {'system_cost': 87995 / 1.25, 'system_effect': 4.9},
@@ -8,7 +14,7 @@ packages_dict = {
     '45 solar panels': {'system_cost': 195999 / 1.25, 'system_effect': 18.5}
 }
 
-elpris_df = pd.read_csv(r'data/predicted_prices_withzones.csv')
+elpris_df = pd.read_csv(csv_path)
 
 years_list = list(elpris_df['Year'])
 years_list = list([2023] + years_list)
