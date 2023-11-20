@@ -1,11 +1,8 @@
 import pandas as pd
 from pathlib import Path
-# import platform
+
 
 csv_path = Path(__file__).resolve().parents[2] / 'data' / 'predicted_prices_withzones.csv'
-
-# if platform.system() == 'Linux':
-#     csv_path = Path(__file__).resolve().parents[2] / 'data' / 'predicted_prices_withzones.csv'
 
 packages_dict = {
     '12 solar panels': {'system_cost': 87995 / 1.25, 'system_effect': 4.9},
