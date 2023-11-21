@@ -29,7 +29,7 @@ Based on the assumption that a main factor stopping house owners from installing
 To run locally:
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/simonjanlov/Solar_panels_ROI_v2
 2. Add an .env file containing your own personal OpenWeather API key. See the file .env.example
 3. Check requirements.txt
 4. Run app.py
