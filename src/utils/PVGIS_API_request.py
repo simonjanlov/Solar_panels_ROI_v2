@@ -6,19 +6,10 @@ import requests
 # minimum:
 # https://re.jrc.ec.europa.eu/api/MRcalc?lat=45&lon=8&horirrad=1
 
-
 def get_pvgis_data(lat, lon):
-        
-    # raddatabase=PVGIS-SARAH ger oss bara data fram till 2016
-    # raddatabase=PVGIS-SARAH2 är databasen som innehåller data fram till 2020 men det verkar inte som att vi kan
-    # nå den från API?
 
     # api-endpoint
     URL = "https://re.jrc.ec.europa.eu/api/MRcalc"
-    
-    # location given here
-    # lat = '56.855'
-    # lon = '12.691'
     raddatabase = "PVGIS-COSMO"
     horirrad = '1'
     

@@ -54,7 +54,7 @@ class SolarPanelSystem:
 
     def years_until_breakeven(self, list_of_electricity_prices, years=30):
         # we could here create a method of this class that outputs the number of years until breakeven
-        # This would only be a bonus feature
+        # Opted for implementing this separately (in calc_years_until_breakeven.py)
         pass
 
 
@@ -72,8 +72,7 @@ if __name__=='__main__':
     # print(my_system.calc_yearly_electricity_output())
 
     # print(my_system.electricity_cost_saved_per_year(0.98))
+
     print(my_system.profitability_over_time(list_of_electricity_prices))
 
-    # for i in range(30):
-    #     list_of_electricity_prices.append(round(random() * 0.75 + 0.3, 2))
 
