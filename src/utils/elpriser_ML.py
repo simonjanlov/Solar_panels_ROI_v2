@@ -3,17 +3,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import mean_squared_error, r2_score
+from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
 
 # Load the data
-data = pd.read_csv("final_project/data/elpriser_sverige96-23.csv")  
-
-# # List of columns to increase by 25% (skatt)
-# columns_to_increase = ['Lägenhet', 'Villa utan elvärme', 'Villa med elvärme', 'Större hushåll', 'Näringsverksamhet', 'Småindustri']
-
-# # Add 25% to the specified columns
-# data[columns_to_increase] = data[columns_to_increase] * 1.25
+csv_path = Path(__file__).resolve().parents[2] / 'data' / 'elpriser_sverige96-23.csv'
+data = pd.read_csv(csv_path)  
 
 # Select the columns of interest
 data = data[["Year", "Villa utan elvärme"]]
@@ -54,7 +50,7 @@ y_values_poly = model.predict(x_values_poly)
 plt.scatter(X_test, y_test, color='blue', label='Actual Data')
 plt.plot(x_values, y_values_poly, color='red', linewidth=2, label=f'Polynomial Regression (Degree {degree})')
 plt.xlabel("Year")
-plt.ylabel("Villa utan elvärme")
+plt.ylabel("Electricity price per kWh")
 plt.legend()
 plt.show()
 
@@ -74,9 +70,10 @@ future_predictions = model.predict(future_years_poly)
 # Create a DataFrame to store the predictions
 predictions_df = pd.DataFrame({'Year': future_years, 'Predicted kWh price': future_predictions})
 
-# Display the predictions
+# Display the predictions and export csv
 print(predictions_df)
-predictions_df.to_csv("predicted_prices.csv", index=False)
+csv_print_path = Path(__file__).resolve().parents[2] / 'data' / 'predicted_prices.csv'
+predictions_df.to_csv(csv_print_path, index=False)
 
 print(f"Mean Squared Error (MSE): {mse}")
 print(f"R-squared (R²): {r2}")
