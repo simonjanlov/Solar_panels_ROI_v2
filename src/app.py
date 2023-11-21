@@ -59,7 +59,7 @@ prognoses_fig.update_traces(name="zone 3", selector=dict(name="zone3"))
 prognoses_fig.update_traces(name="zone 4", selector=dict(name="zone4"))
 
 prognoses_fig.update_layout(
-    title_font=dict(size=24),
+    # title_font=dict(size=24),
     legend=dict(orientation="h", y=-0.2, x=0.5, xanchor="center"),
     yaxis_title="predicted price (SEK/kWh)",
     xaxis_title="",
@@ -73,8 +73,7 @@ fig = go.Figure(go.Indicator(
     value=15,
     domain={'x': [0, 1], 'y': [0, 1],
             'row': 0, 'column': 0},
-    # title={'text': "Years until breakeven"},
-    gauge={'bar': {'color': "#f98435"}  # Change the color here
+    gauge={'bar': {'color': "#f98435"}
     }))
 
 # Create the graph for the profitability
@@ -91,7 +90,7 @@ years_profit_df = pd.DataFrame({'Years': years_list, 'Profit': profit_values})
 years_profit_df['Profit'] = [round(x, -2) if abs(x) > 1000 else x for x in profit_values]
 
 main_fig = px.bar(years_profit_df, x='Years', y='Profit', hover_data={'Profit':':.2f'})
-main_fig.update_layout(title_x=0.5, title_font=dict(size=24))  # You can adjust the size (24 in this example) as needed
+main_fig.update_layout(title_x=0.5, title_font=dict(size=24))
 main_fig.update_layout(plot_bgcolor="#11293D")
 
 # Create textbox input
@@ -130,7 +129,7 @@ pricezone_dropdown = dcc.Dropdown(
     options=['SE1', 'SE2', 'SE3', 'SE4'],
     value='SE1',
     className='mb-3',
-    style={'color': 'black', 'width': '100%'}  # Apply Bootstrap classes
+    style={'color': 'black', 'width': '100%'}
 )
 
 package_dropdown = dcc.Dropdown(
@@ -138,7 +137,7 @@ package_dropdown = dcc.Dropdown(
     options=['12 solar panels', '25 solar panels', '35 solar panels', '45 solar panels'],
     value='25 solar panels',
     className='mb-3',
-    style={'color': 'black', 'width': '100%'}  # Apply Bootstrap classes
+    style={'color': 'black', 'width': '100%'}
 )
 
 angle_dropdown = dcc.Dropdown(
@@ -146,36 +145,36 @@ angle_dropdown = dcc.Dropdown(
     options=['0°', '10°', '20°', '30°', '40°', '50°', '60°', '70°', '80°', '90°'],
     value='40°',
     className='mb-3',
-    style={'color': 'black', 'width': '100%'}  # Apply Bootstrap classes
+    style={'color': 'black', 'width': '100%'}
 )
 direction_dropdown = dcc.Dropdown(
     id='direction-dropdown',
     options=['West', 'South West', 'South', 'South East', 'East'],
     value='West',
     className='mb-3',
-    style={'color': 'black', 'width': '100%'}  # Apply Bootstrap classes
+    style={'color': 'black', 'width': '100%'}
 )
 dropdown_row = dbc.Row([
     
     dbc.Col([
         html.Label("Select Electricity Price Zone"),
         pricezone_dropdown,
-    ], width=3,lg=3, md=3, sm=6, xs=12),  # Adjust the width as needed
+    ], width=3,lg=3, md=3, sm=6, xs=12),
 
     dbc.Col([
         html.Label("Select Package"),
         package_dropdown,
-    ], width=3,lg=3, md=3, sm=6, xs=12),  # Adjust the width as needed
+    ], width=3,lg=3, md=3, sm=6, xs=12),
 
     dbc.Col([
         html.Label("Select Tilt"),
         angle_dropdown,
-    ], width=3,lg=3, md=3, sm=6, xs=12),  # Adjust the width as needed
+    ], width=3,lg=3, md=3, sm=6, xs=12),
 
     dbc.Col([
         html.Label("Select Direction"),
         direction_dropdown,
-    ], width=3,lg=3, md=3, sm=6, xs=12),  # Adjust the width as needed
+    ], width=3,lg=3, md=3, sm=6, xs=12),
 ], className="mb-3")
 
 
@@ -244,9 +243,9 @@ def update_output(selected_zone, selected_package, selected_angle, selected_dire
     years_profit_df['Profit'] = [round(x, -2) if abs(x) > 1000 else x for x in profit_values]
 
     main_fig = px.bar(years_profit_df, x='Years', y='Profit')
-    main_fig.update_layout(title_x=0.05, title_font=dict(size=24),  # Adjust the size as needed
-                      xaxis=dict(title_font=dict(size=20)),  # Adjust the size for x-axis title
-                      yaxis=dict(title_font=dict(size=20))  # Adjust the size for y-axis title
+    main_fig.update_layout(title_x=0.05, title_font=dict(size=24),
+                      xaxis=dict(title_font=dict(size=20)),
+                      yaxis=dict(title_font=dict(size=20))
                       )
     main_fig.update_layout(yaxis_title="Profitability (SEK)", xaxis_title="",plot_bgcolor="#11293D")
 
@@ -256,12 +255,10 @@ def update_output(selected_zone, selected_package, selected_angle, selected_dire
     value=calc_years_until_breakeven(years_list, profit_values),
     domain={'x': [0, 1], 'y': [0, 1],
             'row': 0, 'column': 0},
-    # title={'text': "Years until breakeven"},
     gauge={'bar': {'color': "#f98435"},
-            'axis': {'range': [0, 30]}  # Change the color here
+            'axis': {'range': [0, 30]}
     }))
     fig.update_layout(
-    # title=dict(text="Years until breakeven", font=dict(size=24)),  # Adjust the size (30 in this example) as needed
     plot_bgcolor="#11293D"
     )
     
@@ -292,11 +289,7 @@ app.layout = dbc.Container(fluid=True, children=[
                             dbc.Col(centered_city_input_row, width=7),
                             className="justify-content-center",
                         ),
-                        # # dbc.Row(
-                        # #     dbc.Col(html.Div(id="text-output-insolation"),
-                        # #     className="justify-content-center")
-
-                        # ),
+                        
                         dbc.Row(
                             [
                                 dbc.Col(dropdown_row, width=7),
