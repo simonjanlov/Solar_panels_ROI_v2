@@ -4,7 +4,7 @@ Graduation project at the Data Engineer program at Brights / Academic Work Acade
 
 By: Simon Janlöv, Khaqan Yousaf, Daniella Barrera Pacheco, Henry Apler
 
-The application is live here: https://solar-panels-roi-v2.onrender.com/
+Try out the app <a href="https://solar-panels-roi-v2.onrender.com/" target="_blank">here!</a>
 
 ## Table of Contents
 
