@@ -10,35 +10,27 @@ Try out the app <a href="https://solar-panels-roi-v2.onrender.com/" target="_bla
 
 - [Introduction](#introduction)
 - [Technologies](#technologies)
-- [Features](#features)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Introduction
 
-Provide a brief overview of your Data Engineering project. Explain the purpose and the problem it solves.
+Based on the assumption that a main factor stopping house owners from installing solar panels on their roofs is the lack of knowledge about the profitability, we created this web application. Its purpose is making it easier to overview the economic aspects of installing a solar panel system at a given location within Sweden. Hopefully it could lead to a higher share of renewable energy sources in our society.
 
 ## Technologies
 
-List the main technologies and tools used in your project. For example:
-
 - Python
-- Apache Spark
-- Apache Kafka
-- MySQL
-- Docker
-
-## Features
-
-Highlight the key features of your project. This could include data sources, data processing methods, data visualization, or any other notable functionalities.
+- ETL with Pandas, requests module
+- Machine Learning (scikit-earn)
+- Visualisation with Dash
+- Deployment on Render.com
 
 ## Getting Started
 
-Provide instructions on how to get started with your project. Include steps like installation, configuration, and any prerequisites. For example:
+To run locally:
 
 1. Clone the repository:
-   ```bash
    git clone https://github.com/yourusername/your-repo.git
+2. Add an .env file containing your own personal OpenWeather API key. See the file .env.example
+3. Check requirements.txt
+4. Run app.py
+
