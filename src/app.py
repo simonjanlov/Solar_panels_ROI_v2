@@ -44,7 +44,7 @@ fig1 = px.pie(names=sums.index, values=sums.values)
 fig1.update_traces(pull=[0,0,0,0,0,0,0,0,0.2])
 fig1.update_layout(
     # title='Energy source distribution in Sweden',
-    title_font=dict(size=24),  # Adjust the size (30 in this example) as needed
+    title_font=dict(size=24),
     plot_bgcolor="#11293D"
 )
 
@@ -57,10 +57,9 @@ prognoses_fig.update_traces(name="zone 1", selector=dict(name="zone1"))
 prognoses_fig.update_traces(name="zone 2", selector=dict(name="zone2"))
 prognoses_fig.update_traces(name="zone 3", selector=dict(name="zone3"))
 prognoses_fig.update_traces(name="zone 4", selector=dict(name="zone4"))
-# Update the size of the title in the line graph
+
 prognoses_fig.update_layout(
-    # title_text='Price Forecast (per electricity zone)',
-    title_font=dict(size=24),  # Adjust the size (30 in this example) as needed
+    title_font=dict(size=24),
     legend=dict(orientation="h", y=-0.2, x=0.5, xanchor="center"),
     yaxis_title="predicted price (SEK/kWh)",
     xaxis_title="",
