@@ -20,7 +20,7 @@ Based on the assumption that a main factor stopping house owners from installing
 
 - Python
 - ETL with Pandas, requests module
-- Machine Learning (scikit-earn)
+- Machine Learning (scikit-learn)
 - Visualisation with Dash
 - Deployment on Render.com
 
